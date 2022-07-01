@@ -26,6 +26,7 @@ android {
     //视图绑定
     buildFeatures {
         viewBinding true
+        dataBinding true
     }
 
     compileOptions {

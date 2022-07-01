@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_search"
+        android:shortcutId="test_0"
+        android:shortcutShortLabel="@string/search">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.zcq.learning.activity.SettingActivity"
+            android:targetPackage="com.zcq.learning" />
+        <categories android:name="android.shortcut.conversation" />
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_shortcut_scanning"
+        android:shortcutId="test_1"
+        android:shortcutShortLabel="@string/scanning">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="com.zcq.learning.activity.ScanningActivity"
+            android:targetPackage="com.zcq.learning" />
+        <categories android:name="android.shortcut.conversation" />
+        <capability-binding android:key="actions.intent.CREATE_MESSAGE" />
+    </shortcut>
+
+</shortcuts>

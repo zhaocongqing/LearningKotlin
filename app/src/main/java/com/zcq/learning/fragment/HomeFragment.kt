@@ -1,5 +1,6 @@
 package com.zcq.learning.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.zcq.learning.activity.TestActivity
 import com.zcq.learning.databinding.FragmentHomeBinding
 import com.zcq.learning.vm.HomeViewModel
 
@@ -31,6 +33,13 @@ class HomeFragment : Fragment() {
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        //测试
+        binding.textHome.setOnClickListener {
+            val intent = Intent(context, TestActivity::class.java)
+            startActivity(intent)
+        }
+
         return root
     }
 
