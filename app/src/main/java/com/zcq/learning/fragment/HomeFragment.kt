@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.zcq.learning.activity.SettingActivity
 import com.zcq.learning.activity.TestActivity
 import com.zcq.learning.databinding.FragmentHomeBinding
 import com.zcq.learning.vm.HomeViewModel
@@ -36,7 +37,7 @@ class HomeFragment : Fragment() {
 
         //测试
         binding.textHome.setOnClickListener {
-            val intent = Intent(context, TestActivity::class.java)
+            val intent = Intent(context, SettingActivity::class.java)
             startActivity(intent)
         }
 

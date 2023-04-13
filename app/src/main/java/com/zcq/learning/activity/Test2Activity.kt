@@ -1,13 +1,12 @@
 package com.zcq.learning.activity
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zcq.learning.R
-import com.zcq.learning.base.BaseActivity
 
-class SettingActivity : BaseActivity() {
-
+class Test2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_setting)
+        setContentView(R.layout.activity_test2)
     }
 }

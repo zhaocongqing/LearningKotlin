@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.zcq.learning.databinding.FragmentFoundBinding
+import com.zcq.learning.utils.ShortcutUtils
 import com.zcq.learning.vm.FoundViewModel
 
 /**
@@ -29,6 +30,23 @@ class FoundFragment : Fragment() {
         foundViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
+
+        //添加快捷方式
+        binding.textFound.setOnClickListener {
+            activity?.let { it1 -> ShortcutUtils.addShortcut(it1) }
+        }
+
+        //第1种写法
+        binding.textFound.setOnClickListener {
+
+        }
+        //第2种写法
+        //第3种写法
+        //第4种写法
+        //第5种写法
+        //第6种写法
+        //第7种写法
+        //第8种写法
 
         return root
     }
