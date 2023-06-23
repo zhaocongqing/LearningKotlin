@@ -13,8 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Test2Activity"/>
-        <activity android:name=".activity.TestActivity" />
         <activity
             android:name=".activity.HomeActivity"
             android:exported="true">
@@ -23,22 +21,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
-            <!-- 引入shortcuts资源 -->
-            <meta-data
-                android:name="android.app.shortcuts"
-                android:resource="@xml/shortcuts" />
         </activity>
         <activity android:name=".activity.OpeningActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.ScanningActivity" />
-
-        <receiver
-            android:name=".receivers.IconAddCallbackReceiver">
-            <intent-filter>
-                <action android:name="action.test.shortcut" />
-            </intent-filter>
-        </receiver>
 
     </application>
 
