@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 33
-    buildToolsVersion "33.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.zcq.learning"
@@ -56,6 +56,18 @@ dependencies {
     implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.11'
     //https://github.com/youth5201314/banner
     implementation 'io.github.youth5201314:banner:2.2.2'
+    // 3D地图so及jar
+    implementation 'com.amap.api:navi-3dmap:9.7.0_3dmap9.6.0'
+    // 搜索功能
+    implementation 'com.amap.api:search:9.5.0'
+    //代替SharedPreferences、NSUserDefaults、SQLite等常见组件
+    implementation 'com.tencent:mmkv-static:1.2.16'
+    //图片压缩
+    implementation "top.zibin:Luban:1.1.8"
+    //Glide图片加载
+    implementation "com.github.bumptech.glide:glide:4.15.1"
+    // EventBus
+    implementation 'org.greenrobot:eventbus:3.3.1'
 
     constraints {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0") {

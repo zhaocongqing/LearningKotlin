@@ -1,5 +1,6 @@
 package com.zcq.learning.utils
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.graphics.Color
@@ -67,6 +68,7 @@ object StatusBarUtils {
         }
     }
 
+    @SuppressLint("InternalInsetResource", "DiscouragedApi")
     private fun getHeight(context: Context): Int {
         var result = 0
         val resourceId: Int = context.resources.getIdentifier(

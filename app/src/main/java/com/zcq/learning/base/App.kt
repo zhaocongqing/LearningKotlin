@@ -1,34 +1,32 @@
 package com.zcq.learning.base
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.multidex.MultiDexApplication
 
 /**
- * @Describe
- *
- * @Author cq.zhao
- * @CreationTime 2023/1/29 14:27
+ * Create by zcq at 5/15/22
  */
 class App : MultiDexApplication() {
 
-    private var mContext: Context? = null
-    private var mInstance: App? = null
+    companion object {
+        @SuppressLint("StaticFieldLeak")
+        private lateinit var mContext: Context
+        @SuppressLint("StaticFieldLeak")
+        private lateinit var mInstance: App
+    }
 
     override fun onCreate() {
         super.onCreate()
         setTheme(applicationInfo.theme)
-        mContext = applicationContext
+        mContext = this.applicationContext
         mInstance = this
     }
 
-    fun getContext(): Context? {
-        return mContext
+    fun getContext(): Context {
+       return mContext
     }
 
-    fun getInstance(): App? {
-        if (mInstance == null) {
-            mInstance = App()
-        }
+    fun getInstance(): App {
         return mInstance
     }
-
 }

@@ -8,4 +8,12 @@
     <string name="setting">设置</string>
     <string name="scanning">扫描</string>
     <string name="search">搜索</string>
+
+    <string name="mine_points">积分</string>
+    <string name="mine_collect">收藏</string>
+    <string name="mine_find">发现</string>
+    <string name="mine_study">学习</string>
+
+    <!-- imageView desc -->
+    <string name="mine_top_background">mine_top_background</string>
 </resources>

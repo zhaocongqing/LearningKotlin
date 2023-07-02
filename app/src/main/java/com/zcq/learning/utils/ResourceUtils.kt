@@ -15,7 +15,7 @@ import com.zcq.learning.base.App
 object ResourceUtils {
 
     fun getDrawable(id: Int): Drawable? {
-        return App().getInstance()?.let {
+        return App().getInstance().let {
             ResourcesCompat.getDrawable(
                 it.resources,
                 id,
@@ -24,8 +24,8 @@ object ResourceUtils {
         }
     }
 
-    fun getColor(id: Int): Int? {
-        return App().getInstance()?.let {
+    fun getColor(id: Int): Int {
+        return App().getInstance().let {
             ResourcesCompat.getColor(
                 it.resources,
                 id,
@@ -34,15 +34,15 @@ object ResourceUtils {
         }
     }
 
-    fun getString(@StringRes id: Int): String? {
-        return App().getInstance()?.resources?.getString(id)
+    fun getString(@StringRes id: Int): String {
+        return App().getInstance().resources.getString(id)
     }
 
-    fun getString(@StringRes id: Int, vararg formatArgs: Any): String? {
-        return App().getInstance()?.resources?.getString(id, *formatArgs)
+    fun getString(@StringRes id: Int, vararg formatArgs: Any): String {
+        return App().getInstance().resources.getString(id, *formatArgs)
     }
 
-    fun getDimen(id: Int): Int? {
-        return App().getInstance()?.resources?.getDimensionPixelOffset(id)
+    fun getDimen(id: Int): Int {
+        return App().getInstance().resources.getDimensionPixelOffset(id)
     }
 }

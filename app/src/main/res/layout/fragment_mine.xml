@@ -4,20 +4,289 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/theme_bg"
     tools:context=".fragment.MineFragment">
 
-    <TextView
-        android:id="@+id/text_mine"
+    <ImageView
+        android:id="@+id/topBg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="w,1024:2265"
+        android:scaleType="fitXY"
+        android:background="@drawable/ic_mine_top_bg"
+        android:contentDescription="@string/mine_top_background" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/transparent"
+        android:elevation="0dp"
+        app:contentInsetStartWithNavigation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/topBg">
+
+        <TextView
+            android:id="@+id/customTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:ellipsize="middle"
+            android:maxEms="12"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_medium"
+            android:textStyle="bold"
+            tools:text="Title" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/head_img"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_head_img"/>
+
+    <TextView
+        android:id="@+id/text_name"
+        app:layout_constraintTop_toTopOf="@id/head_img"
+        app:layout_constraintStart_toEndOf="@id/head_img"
+        android:layout_marginStart="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_small"
+        android:textColor="@color/white"
+        tools:text="name"/>
+
+    <TextView
+        android:id="@+id/text_sign"
+        app:layout_constraintStart_toStartOf="@id/text_name"
+        app:layout_constraintTop_toBottomOf="@id/text_name"
+        app:layout_constraintBottom_toBottomOf="@id/head_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_micro"
+        tools:text="personalized signature"/>
+
+    <View
+        android:id="@+id/list_bg"
+        app:layout_constraintTop_toBottomOf="@id/head_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_width="0dp"
+        android:layout_height="176dp"
+        android:background="@drawable/white_top_radius_bg"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/label_list"
+        app:layout_constraintTop_toTopOf="@id/list_bg"
+        app:layout_constraintStart_toStartOf="@id/list_bg"
+        app:layout_constraintEnd_toEndOf="@id/list_bg"
+        app:layout_constraintBottom_toBottomOf="@id/list_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"/>
+
+    <RelativeLayout
+        android:id="@+id/pointsLay"
+        app:layout_constraintTop_toBottomOf="@+id/list_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/press_effect_bg"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="@string/mine_points"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/text_size_small"
+            app:drawableStartCompat="@drawable/ic_mine_points" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_4"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_222222"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/collectLay"
+        app:layout_constraintTop_toBottomOf="@+id/pointsLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/press_effect_bg"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="@string/mine_collect"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/text_size_small"
+            app:drawableLeftCompat="@drawable/ic_mine_collect" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_222222"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/studyLay"
+        app:layout_constraintTop_toBottomOf="@+id/collectLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/press_effect_bg"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="@string/mine_study"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/text_size_small"
+            app:drawableLeftCompat="@drawable/ic_mine_study" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_222222"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/findLay"
+        app:layout_constraintTop_toBottomOf="@+id/studyLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/press_effect_bg"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="@string/mine_find"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/text_size_small"
+            app:drawableLeftCompat="@drawable/ic_mine_find" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_222222"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/settingLay"
+        app:layout_constraintTop_toBottomOf="@+id/findLay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/press_effect_bg"
+        android:paddingTop="14dp"
+        android:paddingBottom="14dp"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:text="@string/setting"
+            android:textColor="@color/color_222222"
+            android:textSize="@dimen/text_size_small"
+            app:drawableLeftCompat="@drawable/ic_mine_setting" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp_4"
+            android:textSize="@dimen/text_size_small"
+            android:textColor="@color/color_222222"
+            android:layout_centerInParent="true"
+            android:layout_alignParentEnd="true"
+            app:drawableRightCompat="@drawable/ic_arrow_right" />
+
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

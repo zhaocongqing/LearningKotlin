@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.zcq.learning.activity.SettingActivity
-import com.zcq.learning.activity.TestActivity
+import com.zcq.learning.base.BaseFragment
 import com.zcq.learning.databinding.FragmentHomeBinding
 import com.zcq.learning.vm.HomeViewModel
 
@@ -17,7 +16,7 @@ import com.zcq.learning.vm.HomeViewModel
  * 首页
  * Create by zcq at 5/15/22
  */
-class HomeFragment : Fragment() {
+class HomeFragment : BaseFragment() {
 
     //声明binding对象
     private var _binding: FragmentHomeBinding? = null
